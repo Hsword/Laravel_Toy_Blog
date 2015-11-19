@@ -1,0 +1,16 @@
+@extends("layouts.appe")
+
+@section("content")
+<form class= "form-horizontal">
+            {{ csrf_field() }}
+            <!-- Essay name here -->
+            <div class="form-group">
+                <label for="essay" class="col-sm-3 control-label">Essay</label>
+                <div class="col-sm-6">
+                    <span class="input-xlarge uneditable-input">{!! $article->name !!}</span>
+					<span class="input-xlarge uneditable-input">{{ $article->content }}</span>
+				</div>
+            </div>
+        </form>
+@endsection
+
