@@ -1,0 +1,36 @@
+@extends("layouts.app")
+
+@section("content")
+@if(count($errors) > 0)
+	<div>
+        @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+	</div>
+@endif
+<form action="/register" method="POST">
+{{ csrf_field() }}
+    <table>
+        <th>Register</th>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="username"/></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password"/></td>
+            </tr>
+            <tr>
+                <td>Confirm Password</td>
+                <td><input type="password" name="password_confirmation"/></td>
+            </tr>
+	    <tr>
+                <td>Email Address</td>
+                <td><input type="text" name="email"/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Register"></td>
+            </tr>
+    </table>
+</form>
+@endsection

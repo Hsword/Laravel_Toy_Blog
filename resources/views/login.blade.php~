@@ -1,0 +1,17 @@
+@extends("layouts.app")
+
+@section("content")
+@if(count($errors) > 0 || isset($loginError))
+	<div>
+        @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+		@if(isset($loginError))
+            <li>{{ $loginError }}</li>
+		@endif
+	</div>
+@endif
+<form action="/login" method="POST">
+{{ csrf_field() }}
+
+@endsection

@@ -1,0 +1,2 @@
+authcontroller  login  $data=[]; middleware error
+edit/{id}  view  $article->name

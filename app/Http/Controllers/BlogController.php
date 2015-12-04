@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Essay;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
 
 class BlogController extends Controller
 {
@@ -80,7 +81,7 @@ class BlogController extends Controller
 		$essay->name=$request->get('name');
 		$essay->content=$request->get('content');
 		$essay->save();
-		return redirect('/');
+		return Redirect::route('home');
     }
     /**
      * Remove the specified resource from storage.

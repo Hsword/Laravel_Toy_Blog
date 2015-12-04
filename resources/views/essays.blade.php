@@ -1,6 +1,7 @@
 @extends("layouts.app")
 
 @section("content")
+	<a class="btn btn-block" href="/logout">Logout</a>
     <div class="panel-body">
         @include('common.errors')
 		<div><a class="btn btn-success btn-block" href="create">New essay</a></div>
