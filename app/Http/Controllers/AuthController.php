@@ -16,7 +16,11 @@ class AuthController extends Controller
 {
 	public function loginAction(Request $request)
 	{
-		$data=[];  //empty data can't output middware error
+		//$data=[];  //empty data can't output middware error
+		if(!($request->session()->has('loginError')))
+			$data=[];
+		else
+			$data['loginError']=$request->session()->get('loginError');
 		if($request->method() == 'POST')
 		{
 			$input = $request->input();
